@@ -1,0 +1,43 @@
+1.내림차순
+def solution(s):
+    ans = []
+    for i in s:
+        ans.append(i)
+    ans.sort(reverse=True)
+    return ''.join(ans)
+
+2.문자열 내맘대로
+def solution(strings, n):
+    answer = []
+    for i in range(len(strings)):
+        strings[i] = strings[i][n] + strings[i]
+    strings.sort()#앞에 문자열을 붙여서  
+    print(strings)
+    for data in strings:
+        answer.append(data[1:])
+    return answer
+
+3.문자열 p,y
+def solution(s):
+    answer = True
+    littleP = s.count('p');
+    largeP = s.count('P')
+    littleY = s.count('y');
+    largeY = s.count('Y')
+    
+    if(littleP + largeP == littleY + largeY):
+        return True
+    else:
+        return False
+
+4.문자열 다루기 기본
+def solution(s):
+    tcount = 0
+    for i in s:
+        if(ord(i) > 48 and ord(i) < 58):
+            tcount = tcount+1
+    if(len(s) == tcount):
+        return True
+    else:
+        return False
+(아스키코드화 해서 풀려햇으나 4,6문자길이 처리를 생각치못해 실패)
